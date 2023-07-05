@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\MusicController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +20,16 @@ use App\Http\Controllers\MusicController;
 //     return view('welcome');
 // });
 
+Route::get('/logIn', [AuthController::class, 'login'])->name('loginAcc');
+Route::get('/RegisterAccount', [AuthController::class, 'register'])->name('registerAcc');
+Route::get('/Fogot-pass', [AuthController::class, 'fogotpass'])->name('fogotpass');
+
+
+
+
 Route::get('/', [MusicController::class, 'home'])->name('musicdash');
 Route::get('/tables', [MusicController::class, 'tables'])->name('musictable');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
