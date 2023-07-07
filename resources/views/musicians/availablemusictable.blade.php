@@ -52,7 +52,10 @@
 												<td>{{ $record->type }}</td>
 												<td>{{ $record->uploader }}</td>
 												<td>{{ \Carbon\Carbon::parse($record->upload_date)->format('d-m-Y') }}</td>
-												<td>{{ $record->id }}</td>
+												<td>{{ $record->id }} 
+														<a href="#" class="btn btn-success"> <i class="align-middle" data-feather="eye"></i></a>
+														<a href="#" class="btn btn-primary"> <i class="align-middle" data-feather="printer"></i></a>
+												</td>
 											</tr>
 											@endforeach	
 										</tbody>
