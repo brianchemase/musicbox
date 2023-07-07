@@ -70,7 +70,13 @@
 						Plugins & Addons
 					</li>
                     <li class="sidebar-item">
-						<a class="sidebar-link" href="{{route('musicdash')}}">
+						<a class="sidebar-link" href="{{route('musicpage')}}">
+                            <i class="align-middle"data-feather="user"></i> <span class="align-middle">Music Page</span>
+                        </a>
+					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="{{route('userprofilepage')}}">
                             <i class="align-middle"data-feather="user"></i> <span class="align-middle">Profile</span>
                         </a>
 					</li>

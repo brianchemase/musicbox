@@ -50,6 +50,12 @@ Route::get('/SubmitRequestform', [MusicController::class, 'requests_submition'])
 // upload music attempt
 Route::get('/SubmitAttempt', [MusicController::class, 'upload_attempt'])->name('musicattempt');
 
+// user profile
+Route::get('/UserProfile', [MusicController::class, 'user_profile'])->name('userprofilepage');
+
+// user profile
+Route::get('/ViewMusicPage', [MusicController::class, 'musicpage'])->name('musicpage');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -61,5 +61,15 @@ class MusicController extends Controller
     {
         return view ('musicians.uploadattemptform');
     }
+
+    public function user_profile()
+    {
+        return view ('musicians.userprofile');
+    }
+
+    public function musicpage()
+    {
+        return view ('musicians.viewmusicpage');
+    }
     
 }
