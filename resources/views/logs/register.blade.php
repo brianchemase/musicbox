@@ -8,6 +8,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 	
 	<link rel="stylesheet" href="auth/css/style.css">
 
@@ -65,6 +66,17 @@
 			      			<input type="text" class="form-control" required>
 			      			<label class="form-control-placeholder" for="username">Country</label>
 			      		</div>
+
+						  <div class="form-group mt-3">
+						  <select class="form-control" required>
+						  		<option value="" ></option>
+								@foreach ($countries as $country)
+									<option value="{{ $country->country_id }}">  {{ $country->country_name }}</option>
+								@endforeach
+							</select>
+							<label class="form-control-placeholder" for="username">Country</label>
+						</div>
+
 
 			      		<div class="form-group mt-3">
 			      			<input type="text" class="form-control" required>

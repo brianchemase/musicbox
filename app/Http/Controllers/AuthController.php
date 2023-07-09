@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Country;
 
 class AuthController extends Controller
 {
@@ -13,7 +14,9 @@ class AuthController extends Controller
     }
     public function register()
     {
-        return view ('logs.register');
+        $countries = Country::all();
+        //return $countries;
+        return view ('logs.register',compact('countries'));
     }
     public function fogotpass()
     {
