@@ -42,6 +42,7 @@ Route::get('/ViewmyUploadedMusic', [MusicController::class, 'my_available_music'
 
 // upload
 Route::get('/UploadMusicform', [MusicController::class, 'upload_music'])->name('uploadmusicform');
+Route::post('/SaveUploadMusicform', [MusicController::class, 'storeMusicSubmission'])->name('storeSubmission');//save submission
 
 
 // submit a request
