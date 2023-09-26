@@ -54,8 +54,11 @@ Route::get('/SubmitAttempt', [MusicController::class, 'upload_attempt'])->name('
 // user profile
 Route::get('/UserProfile', [MusicController::class, 'user_profile'])->name('userprofilepage');
 
-// user profile
+// view music page
 Route::get('/ViewMusicPage', [MusicController::class, 'musicpage'])->name('musicpage');
+
+// view uploaded music
+Route::get('/ViewMusicFile/{id}', [MusicController::class, 'previewMusic'])->name('ViewMusic');
 
 Auth::routes();
 

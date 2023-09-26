@@ -15,7 +15,7 @@
 								<div class="card-body">
 									<div class="row">
 										<div class="col mt-0">
-											<h5 class="card-title">Pending Bills</h5>
+											<h5 class="card-title">Registered Music</h5>
 										</div>
 
 										<div class="col-auto">
@@ -25,9 +25,9 @@
 										</div>
 									</div>
 								
-									<h1 class="mt-1 mb-3">KES 15325</h1>
+									<h1 class="mt-1 mb-3"> 15325</h1>
 									<div class="mb-0">
-										<span class="text-muted">Current Pending Bills</span>
+										<span class="text-muted">Current Music Available</span>
 									</div>
 								</div>
 							</div>
@@ -37,7 +37,7 @@
 								<div class="card-body">
 									<div class="row">
 										<div class="col mt-0">
-											<h5 class="card-title">Active Meters</h5>
+											<h5 class="card-title">Registered Members</h5>
 										</div>
 
 										<div class="col-auto">
@@ -49,7 +49,7 @@
 								
 									<h1 class="mt-1 mb-3"> 150</h1>
 									<div class="mb-0">
-										<span class="text-muted">Total active metres</span>
+										<span class="text-muted">Total active members</span>
 									</div>
 								</div>
 							</div>
@@ -59,7 +59,7 @@
 								<div class="card-body">
 									<div class="row">
 										<div class="col mt-0">
-											<h5 class="card-title">Amount Paid</h5>
+											<h5 class="card-title">My Contributions</h5>
 										</div>
 
 										<div class="col-auto">
@@ -72,7 +72,7 @@
 									
 									<div class="mb-0">
 										
-										<span class="text-muted">Total Amount Registered</span>
+										<span class="text-muted">Total Submitions done </span>
 									</div>
 								</div>
 							</div>
@@ -82,7 +82,7 @@
 								<div class="card-body">
 									<div class="row">
 										<div class="col mt-0">
-											<h5 class="card-title">Monthly Payment</h5>
+											<h5 class="card-title">Pending Requests</h5>
 										</div>
 
 										<div class="col-auto">
@@ -95,7 +95,7 @@
 									<h1 class="mt-1 mb-3">600</h1>
 									<div class="mb-0">
 										
-										<span class="text-muted">Total monthly Amount registered</span>
+										<span class="text-muted">Registered Requests</span>
 									</div>
 								</div>
 							</div>
@@ -105,7 +105,7 @@
 
 					
 
-					<div class="row">
+					<!-- <div class="row">
 						<div class="col-12 col-lg-12 col-xxl-12 d-flex">
 							<div class="card flex-fill">
 								<div class="card-header">
@@ -181,7 +181,7 @@
 							</div>
 						</div>
 						
-					</div>
+					</div> -->
 
 				</div>
 			</main>

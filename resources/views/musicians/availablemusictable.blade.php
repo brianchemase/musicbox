@@ -9,24 +9,10 @@
 
 				<h1 class="h3 mb-3"><strong>Music Box </strong>Available Music</h1>
 
-					<div class="row">
-						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
-									<h5 class="card-title mb-0">Empty card</h5>
-								</div>
-								<div class="card-body">
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="card">
-								<div class="card-header">
 									<h1 class="h3 mb-3"><strong>Available Shared Music</strong></h1>
-									<h6 class="card-subtitle text-muted">This extension provides a framework with common options that can be used with
-										DataTables. See official documentation <a href="https://datatables.net/extensions/buttons/" target="_blank"
-											rel="noopener noreferrer">here</a>.</h6>
+									<h6 class="card-subtitle text-muted">Available Shared music from different parts of the world.</h6>
 								</div>
 								<div class="card-body">
 									<table id="datatables-reponsive" class="table table-striped" style="width:100%">
@@ -52,8 +38,11 @@
 												<td>{{ $record->type }}</td>
 												<td>{{ $record->uploader }}</td>
 												<td>{{ \Carbon\Carbon::parse($record->upload_date)->format('d-m-Y') }}</td>
-												<td>{{ $record->id }} 
-														<a href="#" class="btn btn-success"> <i class="align-middle" data-feather="eye"></i></a>
+												<td>
+													@if ($record->path)
+													<a href="{{ route('ViewMusic', ['id' => $record->id]) }}" class="btn btn-success"> <i class="align-middle" data-feather="eye"></i></a>
+													@endif
+	
 														<a href="#" class="btn btn-primary"> <i class="align-middle" data-feather="printer"></i></a>
 												</td>
 											</tr>

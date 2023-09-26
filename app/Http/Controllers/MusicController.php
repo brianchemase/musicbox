@@ -136,14 +136,29 @@ class MusicController extends Controller
         $upload_date = now();
         $update_date = now();
 
-        // Handle file upload
+        // // Handle file upload
+        // if ($request->hasFile('pdf_file')) {
+        //     $file = $request->file('pdf_file');
+        //     $uniqueFileName = time() . '_' . $file->getClientOriginalName();
+        //     $filePath = $file->storeAs('pdfs', $uniqueFileName); // Store with a unique file name in the 'pdfs' directory
+        // } else {
+        //     // Handle the case where no file was uploaded
+        //     $filePath = null;
+        // }
+
         if ($request->hasFile('pdf_file')) {
-            $file = $request->file('pdf_file');
-            $uniqueFileName = time() . '_' . $file->getClientOriginalName();
-            $filePath = $file->storeAs('pdfs', $uniqueFileName); // Store with a unique file name in the 'pdfs' directory
-        } else {
-            // Handle the case where no file was uploaded
-            $filePath = null;
+
+            //return $request;
+    
+            $request->validate([
+                //'loanform' => 'mimes:png,jpg,jpeg|max:2048' // Only allow .jpg, .bmp and .png file types.
+                'pdf_file' => 'required|mimes:pdf,xlxs,xlx,docx,doc,csv,txt,png,gif,jpg,jpeg|max:4048',
+            ]);
+    
+    
+             // Save the file locally in the storage/public/ folder under a new folder named /loanforms
+             $request->pdf_file->store('music', 'public');
+             $updatedate = date('Y-m-d H:i:s');
         }
 
         // Use the DB facade to insert data into the database
@@ -156,7 +171,7 @@ class MusicController extends Controller
             'year' => $year,
             'status' => $status,
             'uploader' => $uploader,
-            'path' => $uniqueFileName, // Save the unique file name in the 'path' column
+            'path' => $request->pdf_file->hashName(), // Save the unique file name in the 'path' column
             'upload_date' => $upload_date,
             'update_date' => $update_date,
             //'created_at' => now(), // Set the created_at timestamp
@@ -169,6 +184,32 @@ class MusicController extends Controller
         } else {
             return back()->with('error', 'Failed to register submission. Please try again.');
         }
+    }
+
+    public function previewMusic($id)
+    {
+        //return $id;
+
+        // Retrieve the music submission record from the database based on the given $id using the DB facade
+        $musicSubmission = DB::table('tbl_uploaded_music_submission')->find($id);
+
+        // Check if the record exists
+        if (!$musicSubmission) {
+            // Handle the case where the record does not exist, e.g., show an error message or redirect
+            return redirect()->route('music.index')->with('error', 'Music submission not found.');
+        }
+
+        $data=[
+
+            'musicSubmission' => $musicSubmission,// submissions
+
+        ];
+            
+
+
+        return view ('musicians.viewmusicfile')->with($data);
+
+
     }
 
 
