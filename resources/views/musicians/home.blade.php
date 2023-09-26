@@ -25,7 +25,7 @@
 										</div>
 									</div>
 								
-									<h1 class="mt-1 mb-3"> 15325</h1>
+									<h1 class="mt-1 mb-3"> {{$registeredMusic}}</h1>
 									<div class="mb-0">
 										<span class="text-muted">Current Music Available</span>
 									</div>
@@ -47,7 +47,7 @@
 										</div>
 									</div>
 								
-									<h1 class="mt-1 mb-3"> 150</h1>
+									<h1 class="mt-1 mb-3"> {{$registedMembers}}</h1>
 									<div class="mb-0">
 										<span class="text-muted">Total active members</span>
 									</div>

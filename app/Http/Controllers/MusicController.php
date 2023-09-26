@@ -12,7 +12,15 @@ class MusicController extends Controller
 
     public function home()
     {
-        return view ('musicians.home');
+
+        $registeredMusic = DB::table('tbl_uploaded_music_submission')->count();
+
+        $data= [
+            'registeredMusic' => $registeredMusic,
+            'registedMembers' => '25',
+        ];
+
+        return view ('musicians.home')->with($data);
     }
     public function form()
     {
