@@ -68,7 +68,7 @@
 											</div>
 										</div>
 									</div>
-									<h1 class="mt-1 mb-3">1400</h1>
+									<h1 class="mt-1 mb-3">{{$MyContributions}}</h1>
 									
 									<div class="mb-0">
 										
@@ -92,7 +92,7 @@
 										</div>
 									</div>
 								
-									<h1 class="mt-1 mb-3">600</h1>
+									<h1 class="mt-1 mb-3">{{$PendingRequests}}</h1>
 									<div class="mb-0">
 										
 										<span class="text-muted">Registered Requests</span>

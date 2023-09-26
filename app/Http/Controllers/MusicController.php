@@ -18,6 +18,8 @@ class MusicController extends Controller
         $data= [
             'registeredMusic' => $registeredMusic,
             'registedMembers' => '25',
+            'MyContributions' => '125',
+            'PendingRequests' => '144',
         ];
 
         return view ('musicians.home')->with($data);
