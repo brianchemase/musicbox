@@ -18,6 +18,8 @@
 
 	<!-- <link href="css/app.css" rel="stylesheet"> -->
     <link href="{{asset('dash/css/app.css')}}" rel="stylesheet">
+
+	<link href="{{asset('dash/css/cardsapp.css')}}" rel="stylesheet">
 	<!-- BEGIN SETTINGS -->
 
 	<!-- BEGIN SETTINGS -->

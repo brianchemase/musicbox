@@ -37,9 +37,10 @@
 						<div class="col-12">
 							<div class="card">
 								<div class="card-header">
-									<h5 class="card-title mb-0">Empty card</h5>
+									<h5 class="card-title mb-0">Guide</h5>
 								</div>
 								<div class="card-body">
+								<h5 class="card-title mb-0">Use here to upload and share your music contribution to the platform. You can attach the score, or parts if you have them as separate files.<br><br> Remember to lable the Titles correctly to match your uploaded file.</h5>
 								</div>
 							</div>
 						</div>
@@ -59,32 +60,42 @@
 								<form class="row g-3" method="POST" action="{{ route('storeSubmission') }}" enctype="multipart/form-data">
 									@csrf
 									<div class="col-md-4">
-										<label for="validationDefault01" class="form-label">Title</label>
+										<label for="validationDefault01" class="form-label">Music Title *</label>
 										<input type="text" class="form-control" id="validationDefault01" name="title" placeholder="Enter title" required>
 										<input type="hidden" class="form-control" id="validationDefault01" name="uploader" Value="systemadmin">
 									</div>
 									<div class="col-md-4">
-										<label for="validationDefault02" class="form-label">Composer</label>
+										<label for="validationDefault02" class="form-label">Music Composer *</label>
 										<input type="text" class="form-control" id="validationDefault02" name="composer" placeholder="Enter composer" required>
 									</div>
 									<div class="col-md-4">
-										<label for="validationDefaultUsername" class="form-label">Arranger</label>
+										<label for="validationDefaultUsername" class="form-label">Music Arranger *</label>
 										<input type="text" class="form-control" id="validationDefaultUsername" name="arranger" placeholder="Enter arranger" required>
 									</div>
-									<div class="col-md-6">
-										<label for="validationDefault03" class="form-label">Type</label>
+									<div class="col-md-3">
+										<label for="validationDefault03" class="form-label">Music Type *</label>
 										<input type="text" class="form-control" id="validationDefault03" name="type" placeholder="Enter type" required>
 									</div>
 									<div class="col-md-3">
-										<label for="validationDefault04" class="form-label">No</label>
-										<input type="text" class="form-control" id="validationDefault04" name="No" placeholder="Enter No" required>
+											<label for="validationDefault04" class="form-label">Music Type *</label>
+											<select class="form-select" id="validationDefault04" name="type" required>
+												<option selected disabled value="">Choose...</option>
+												<option value="Arrangement">Arrangement</option>
+												<option value="Chorus">Chorus</option>
+												<option value="Choir">Choir</option>
+												<option value="other">Other</option>
+											</select>
+										</div>
+									<div class="col-md-3">
+										<label for="validationDefault04" class="form-label">Music No #</label>
+										<input type="text" class="form-control" id="validationDefault04" name="No" placeholder="Enter No" >
 									</div>
 									<div class="col-md-3">
-										<label for="validationDefault05" class="form-label">Year</label>
-										<input type="text" class="form-control" id="validationDefault05" name="year" placeholder="Enter year" required>
+										<label for="validationDefault05" class="form-label">Year composed </label>
+										<input type="text" class="form-control" id="validationDefault05" name="year" placeholder="Enter year">
 									</div>
 									<div class="col-4">
-										<label for="validationDefault06" class="form-label">Attach File in PDF</label>
+										<label for="validationDefault06" class="form-label">Attach Music File in PDF *</label>
 										<input type="file" class="form-control" id="validationDefault06" name="pdf_file" required>
 									</div>
 									<div class="col-12">
@@ -96,7 +107,7 @@
 										</div>
 									</div>
 									<div class="col-12">
-										<button class="btn btn-primary" type="submit">Submit form</button>
+										<button class="btn btn-primary" type="submit">Submit Submission</button>
 									</div>
 								</form>
 							</div>
