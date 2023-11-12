@@ -37,38 +37,35 @@
 									</p>
 								</div>
 			      	</div>
-					<form action="#" class="signin-form">
+					<form method="POST" action="{{ route('register') }}" class="signin-form">
+					@csrf
 
                     
-
                           <div class="form-group mt-3">
 			      			<input type="text" class="form-control" required>
-			      			<label class="form-control-placeholder" for="names">First Name</label>
+			      			<label class="form-control-placeholder" name="name" value="{{ old('name') }}" for="names">Full Names</label>
 			      		</div>
 
-                          <div class="form-group mt-3">
-			      			<input type="text" class="form-control" required>
-			      			<label class="form-control-placeholder" for="names">Last Name</label>
-			      		</div>
+                          
 
                         <div class="form-group mt-3">
 			      			<input type="text" class="form-control" required>
-			      			<label class="form-control-placeholder" for="email">Email Address</label>
+			      			<label class="form-control-placeholder" name="email" value="{{ old('email') }}" for="email">Email Address</label>
 			      		</div>
 
                           <div class="form-group mt-3">
 			      			<input type="text" class="form-control" required>
-			      			<label class="form-control-placeholder" for="phone">Phone no (country code)</label>
+			      			<label class="form-control-placeholder" name="phone" value="{{ old('phone') }}" for="phone">Phone no (country code)</label>
 			      		</div>
 
 
                           <div class="form-group mt-3">
 			      			<input type="text" class="form-control" required>
-			      			<label class="form-control-placeholder" for="username">Country</label>
+			      			<label class="form-control-placeholder" name="country" value="{{ old('country') }}" for="username">Country</label>
 			      		</div>
 
 						  <div class="form-group mt-3">
-						  <select class="form-control" required>
+						  <select class="form-control" name="country1" value="{{ old('country1') }}">
 						  		<option value="" ></option>
 								@foreach ($countries as $country)
 									<option value="{{ $country->country_id }}">  {{ $country->country_name }}</option>
@@ -80,17 +77,17 @@
 
 			      		<div class="form-group mt-3">
 			      			<input type="text" class="form-control" required>
-			      			<label class="form-control-placeholder" for="positon">Position</label>
+			      			<label class="form-control-placeholder" name="position" value="{{ old('position') }}" for="positon">Position</label>
 			      		</div>
 
                         <div class="form-group">
-                            <input id="password-field" type="password" class="form-control" required>
+                            <input id="password-field" type="password" class="form-control"  name="password" required>
                             <label class="form-control-placeholder" for="password">Password</label>
                         <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                         </div>
 
                         <div class="form-group">
-                            <input id="password-field" type="password" class="form-control" required>
+                            <input id="password-field" type="password" class="form-control" name="password_confirmation" required>
                             <label class="form-control-placeholder" for="password">Confirm Password</label>
                         <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                         </div>

@@ -16,16 +16,16 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/logIn', [AuthController::class, 'login'])->name('loginAcc');
 Route::get('/RegisterAccount', [AuthController::class, 'register'])->name('registerAcc');
 Route::get('/Fogot-pass', [AuthController::class, 'fogotpass'])->name('fogotpass');
 
 
-
+Route::group(['prefix' => 'admins'], function() {
 
 Route::get('/', [MusicController::class, 'home'])->name('musicdash');
 Route::get('/musiclist', [MusicController::class, 'tables'])->name('musiclist');
@@ -59,6 +59,8 @@ Route::get('/ViewMusicPage', [MusicController::class, 'musicpage'])->name('music
 
 // view uploaded music
 Route::get('/ViewMusicFile/{id}', [MusicController::class, 'previewMusic'])->name('ViewMusic');
+
+});
 
 Auth::routes();
 

@@ -14,7 +14,8 @@ class AuthController extends Controller
     }
     public function register()
     {
-        $countries = Country::all();
+       $countries = Country::all();
+       //$countries="0";
         //return $countries;
         return view ('logs.register',compact('countries'));
     }
