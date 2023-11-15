@@ -61,9 +61,14 @@ class MusicController extends Controller
     {
         $data = DB::table('tbl_uploaded_music_submission')->where('status', 'approved')->get();
         $data = DB::table('tbl_uploaded_music_submission')->get();
+        $data = DB::table('tbl_uploaded_music_submission')
+        ->join('users', 'tbl_uploaded_music_submission.uploader', '=', 'users.id')
+        ->select('tbl_uploaded_music_submission.*', 'users.name as uploader_name')
+        ->get();
+
 
         //$data = DB::table('tbl_uploaded_music_submission')->select('id', 'title')->get();
-       // return $data;
+       //return $data;
 
 
         return view ('musicians.availablemusictable',compact('data'));

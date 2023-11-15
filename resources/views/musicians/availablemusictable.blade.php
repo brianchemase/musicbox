@@ -36,7 +36,7 @@
 												<td>{{ $record->composer }}</td>
 												<td>{{ $record->arranger }}</td>
 												<td>{{ $record->type }}</td>
-												<td>{{ $record->uploader }}</td>
+												<td>{{ $record->uploader_name }}</td>
 												<td>{{ \Carbon\Carbon::parse($record->upload_date)->format('d-m-Y') }}</td>
 												<td>
 													@if ($record->path)
