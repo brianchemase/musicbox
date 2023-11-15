@@ -5,10 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Country;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
+
+    
+    public function landingpage()
+    {
+
+        $data = DB::table('tbl_uploaded_music_submission')->get();
+        return view ('index',compact('data'));
+        //return view('index');
+    }
     //
     public function login()
     {
@@ -62,6 +72,7 @@ class AuthController extends Controller
         // Redirect to a success page or do something else
         return redirect()->route('login')->with('success', 'Registration successful!. Login');
     }
+
 
 
 

@@ -29,6 +29,7 @@
   <link href="{{asset('landing/css/style.css')}}" rel="stylesheet" />
   <!-- responsive style -->
   <link href="{{asset('landing/css/responsive.css')}}" rel="stylesheet" />
+  <link href="https://cdn.datatables.net/v/dt/dt-1.13.7/datatables.min.css" rel="stylesheet">
 
 </head>
 
@@ -269,6 +270,63 @@
     </div>
   </section>
   <!-- end service section -->
+
+
+  <section class="service_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Sample Uploads Available
+        </h2>
+        <p>
+          We have the following available features
+        </p>
+      </div>
+    </div>
+    <div class="container">
+
+              
+          <div class="container table-responsive py-5"> 
+          <table id="example" class="table table-striped" style="width:100%">
+          <thead>
+											<tr>
+												<th>#</th>
+												<th>Title</th>
+												<th>Composer</th>
+												<th>Arranger</th>
+												<th>Type</th>
+												
+												<th>Upload date</th>
+												<th>Download</th>
+											</tr>
+										</thead>
+										<tbody>
+										@foreach($data as $record)
+											<tr>
+												<td>{{ $loop->iteration }}</td>
+												<td>{{ $record->title }}</td>
+												<td>{{ $record->composer }}</td>
+												<td>{{ $record->arranger }}</td>
+												<td>{{ $record->type }}</td>
+												
+												<td>{{ \Carbon\Carbon::parse($record->upload_date)->format('d-m-Y') }}</td>
+												<td>
+													@if ($record->path)
+													<a href="{{ route('ViewMusic', ['id' => $record->id]) }}" class="btn btn-success"> <i class="fa fa-download" aria-hidden="true"></i></a>
+													@endif
+				
+												</td>
+											</tr>
+											@endforeach	
+										</tbody>
+        
+        </table>
+          </div>
+
+    
+    </div>
+  </section>
+
 
   <!-- about section -->
 
@@ -623,12 +681,21 @@
 
   <!-- jQery -->
   <script src="{{asset('landing/js/jquery-3.4.1.min.js')}}"></script>
+  
   <!-- popper js -->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
   </script>
   <!-- bootstrap js -->
   <script src="{{asset('landing/js/bootstrap.js')}}"></script>
   <script src="{{asset('landing/js/custom.js')}}"></script>
+
+  <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.13.7/datatables.min.js"></script> 
+
+  <script>
+        $(document).ready(function() {
+    $('#example').DataTable();
+} );
+    </script>
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
   <!-- End Google Map -->

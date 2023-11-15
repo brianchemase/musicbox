@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\MusicController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,9 +17,9 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+//Route::get('/', function () {    return view('index');});
+
+Route::get('/',[AuthController::class, 'landingpage'])->name("index");
 
 Route::get('/logIn', [AuthController::class, 'login'])->name('loginAcc');
 Route::get('/RegisterAccount', [AuthController::class, 'register'])->name('registerAcc');
