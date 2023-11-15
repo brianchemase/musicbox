@@ -22,7 +22,7 @@
 				</div>
 			</div>
 			<div class="row justify-content-center">
-				<div class="col-md-7 col-lg-5">
+				<div class="col-md-7 col-lg-8">
 					<div class="wrap">
 						<div class="img" style="background-image: url(auth/images/bg-2.jpg);"></div>
 						<div class="login-wrap p-4 p-md-5">
@@ -37,37 +37,48 @@
 									</p>
 								</div>
 			      	</div>
-					<form method="POST" action="{{ route('register') }}" class="signin-form">
+					<form method="POST" action="{{ route('userregister') }}" class="signin-form">
 					@if(Session::has('success'))
 						<div class="alert alert-success">{{Session::get('success')}}</div>
 					@endif
 					@if(Session::has('fail'))
 						<div class="alert alert-danger">{{Session::get('fail')}}</div>
 					@endif
+
+					@if($errors->any())
+					<div class="alert alert-danger">
+						<ul>
+							@foreach($errors->all() as $error)
+								<li>{{ $error }}</li>
+							@endforeach
+						</ul>
+					</div>
+				@endif
+
 					@csrf
 
                     
                           <div class="form-group mt-3">
-			      			<input type="text" class="form-control" required>
-			      			<label class="form-control-placeholder" name="name" value="{{ old('name') }}" for="names">Full Names</label>
+			      			<input type="text" class="form-control" name="name" value="{{ old('name') }}" required>
+			      			<label class="form-control-placeholder" for="names">Full Names</label>
 			      		</div>
 
                           
 
                         <div class="form-group mt-3">
-			      			<input type="text" class="form-control" required>
-			      			<label class="form-control-placeholder" name="email" value="{{ old('email') }}" for="email">Email Address</label>
+			      			<input type="text" class="form-control" name="email" value="{{ old('email') }}" required>
+			      			<label class="form-control-placeholder"  for="email">Email Address</label>
 			      		</div>
 
                           <div class="form-group mt-3">
-			      			<input type="text" class="form-control" required>
-			      			<label class="form-control-placeholder" name="phone" value="{{ old('phone') }}" for="phone">Phone no (country code)</label>
+			      			<input type="text" class="form-control" name="phone" value="{{ old('phone') }}" required>
+			      			<label class="form-control-placeholder"  for="phone">Phone no (country code)</label>
 			      		</div>
 
 
                           <div class="form-group mt-3">
-			      			<input type="text" class="form-control" required>
-			      			<label class="form-control-placeholder" name="country" value="{{ old('country') }}" for="username">Country</label>
+			      			<input type="text" class="form-control" name="country" value="{{ old('country') }}" required>
+			      			<label class="form-control-placeholder"  for="username">Country</label>
 			      		</div>
 
 						  <div class="form-group mt-3">
@@ -82,8 +93,8 @@
 
 
 			      		<div class="form-group mt-3">
-			      			<input type="text" class="form-control" required>
-			      			<label class="form-control-placeholder" name="position" value="{{ old('position') }}" for="positon">Position</label>
+			      			<input type="text" class="form-control" name="position" value="{{ old('position') }}" required>
+			      			<label class="form-control-placeholder"  for="positon">Position</label>
 			      		</div>
 
                         <div class="form-group">

@@ -22,44 +22,51 @@ Route::get('/', function () {
 
 Route::get('/logIn', [AuthController::class, 'login'])->name('loginAcc');
 Route::get('/RegisterAccount', [AuthController::class, 'register'])->name('registerAcc');
+Route::post('/Usersregister', [AuthController::class, 'registerUser'])->name('userregister');
+//Route::post('/register', 'AuthController@register')->name('userregister');
+
 Route::get('/Fogot-pass', [AuthController::class, 'fogotpass'])->name('fogotpass');
 
+Auth::routes();
+// Route User
+Route::middleware(['auth','user-role:admin'])->group(function()
+{
+    Route::group(['prefix' => 'admins'], function() {
 
-Route::group(['prefix' => 'admins'], function() {
+    Route::get('/', [MusicController::class, 'home'])->name('musicdash');
+    Route::get('/musiclist', [MusicController::class, 'tables'])->name('musiclist');
+    Route::get('/tables', [MusicController::class, 'tables'])->name('musictable');
+    Route::get('/blank', [MusicController::class, 'blank'])->name('blankpage');
+    Route::get('/forms', [MusicController::class, 'form'])->name('formpage');
 
-Route::get('/', [MusicController::class, 'home'])->name('musicdash');
-Route::get('/musiclist', [MusicController::class, 'tables'])->name('musiclist');
-Route::get('/tables', [MusicController::class, 'tables'])->name('musictable');
-Route::get('/blank', [MusicController::class, 'blank'])->name('blankpage');
-Route::get('/forms', [MusicController::class, 'form'])->name('formpage');
+    // view available music
+    Route::get('/ViewUploadedMusic', [MusicController::class, 'available_music'])->name('availableMusic');
 
-// view available music
-Route::get('/ViewUploadedMusic', [MusicController::class, 'available_music'])->name('availableMusic');
+    //
+    // my contributions view available music
+    Route::get('/ViewmyUploadedMusic', [MusicController::class, 'my_available_music'])->name('myavailableMusic');
 
-//
-// my contributions view available music
-Route::get('/ViewmyUploadedMusic', [MusicController::class, 'my_available_music'])->name('myavailableMusic');
-
-// upload
-Route::get('/UploadMusicform', [MusicController::class, 'upload_music'])->name('uploadmusicform');
-Route::post('/SaveUploadMusicform', [MusicController::class, 'storeMusicSubmission'])->name('storeSubmission');//save submission
+    // upload
+    Route::get('/UploadMusicform', [MusicController::class, 'upload_music'])->name('uploadmusicform');
+    Route::post('/SaveUploadMusicform', [MusicController::class, 'storeMusicSubmission'])->name('storeSubmission');//save submission
 
 
-// submit a request
-Route::get('/SubmitRequestform', [MusicController::class, 'requests_submition'])->name('requestform');
+    // submit a request
+    Route::get('/SubmitRequestform', [MusicController::class, 'requests_submition'])->name('requestform');
 
-// upload music attempt
-Route::get('/SubmitAttempt', [MusicController::class, 'upload_attempt'])->name('musicattempt');
+    // upload music attempt
+    Route::get('/SubmitAttempt', [MusicController::class, 'upload_attempt'])->name('musicattempt');
 
-// user profile
-Route::get('/UserProfile', [MusicController::class, 'user_profile'])->name('userprofilepage');
+    // user profile
+    Route::get('/UserProfile', [MusicController::class, 'user_profile'])->name('userprofilepage');
 
-// view music page
-Route::get('/ViewMusicPage', [MusicController::class, 'musicpage'])->name('musicpage');
+    // view music page
+    Route::get('/ViewMusicPage', [MusicController::class, 'musicpage'])->name('musicpage');
 
-// view uploaded music
-Route::get('/ViewMusicFile/{id}', [MusicController::class, 'previewMusic'])->name('ViewMusic');
+    // view uploaded music
+    Route::get('/ViewMusicFile/{id}', [MusicController::class, 'previewMusic'])->name('ViewMusic');
 
+    });
 });
 
 Auth::routes();
@@ -68,7 +75,8 @@ Auth::routes();
 // Route User
 Route::middleware(['auth','user-role:user'])->group(function()
 {
-    Route::get("/home",[HomeController::class, 'userHome'])->name("home");
+    //Route::get("/home",[HomeController::class, 'userHome'])->name("home");
+    Route::get('/usersdash', [MusicController::class, 'home'])->name('usermusicdash');
 });
 
 // Route Editor

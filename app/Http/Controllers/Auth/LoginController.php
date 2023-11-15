@@ -52,7 +52,7 @@ class LoginController extends Controller
         {
             if (auth()->user()->role == 'admin') 
             {
-              return redirect()->route('admin.home');
+              return redirect()->route('musicdash');
             }
             else if (auth()->user()->role == 'editor') 
             {
@@ -60,7 +60,7 @@ class LoginController extends Controller
             }
             else
             {
-              return redirect()->route('home');
+              return redirect()->route('usermusicdash');
             }
         }
         else
