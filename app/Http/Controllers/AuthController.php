@@ -60,7 +60,7 @@ class AuthController extends Controller
         // auth()->login($user);
 
         // Redirect to a success page or do something else
-        return redirect()->route('login')->with('success', 'Registration successful!');
+        return redirect()->route('login')->with('success', 'Registration successful!. Login');
     }
 
 

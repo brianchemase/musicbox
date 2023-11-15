@@ -104,6 +104,18 @@
                             <i class="align-middle" data-feather="power"></i> <span class="align-middle">Signout</span>
                         </a>
 					</li>
+
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="{{ route('logout') }}"
+										onclick="event.preventDefault();
+														document.getElementById('logout-form').submit();">
+										<i class="align-middle" data-feather="power"></i>	{{ __('Signout') }}
+										</a>
+
+										<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+											@csrf
+										</form>
+						</li>
 				</ul>
 
 				

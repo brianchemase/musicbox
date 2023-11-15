@@ -27,7 +27,7 @@
 						<div class="login-wrap p-4 p-md-5">
 			      	<div class="d-flex">
 			      		<div class="w-100">
-			      			<h3 class="mb-4">Sign In</h3>
+			      			<h3 class="mb-4">Sign In To continue</h3>
 			      		</div>
 								<div class="w-100">
 									<p class="social-media d-flex justify-content-end">
@@ -37,6 +37,20 @@
 								</div>
 			      	</div>
 					  <form method="POST" action="{{ route('login') }}">
+					  	@if(Session::has('success'))
+							<div class="alert alert-success">{{Session::get('success')}}</div>
+						@endif
+
+						@if($errors->any())
+							<div class="alert alert-danger">
+								<ul>
+									@foreach($errors->all() as $error)
+										<li>{{ $error }}</li>
+									@endforeach
+								</ul>
+							</div>
+						@endif
+
                         @csrf
 			      		<div class="form-group mt-3">
 			      			<input type="text" class="form-control" name="email" value="{{ old('email') }}" required>
