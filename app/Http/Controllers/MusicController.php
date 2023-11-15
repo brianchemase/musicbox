@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+
+
 
 class MusicController extends Controller
 {
@@ -14,11 +18,19 @@ class MusicController extends Controller
     {
 
         $registeredMusic = DB::table('tbl_uploaded_music_submission')->count();
+        $registedMembers = DB::table('users')->count();
+        $myid=Auth::user()->id;
+        //return $myid;
+
+        $MyContributions = DB::table('tbl_uploaded_music_submission')
+                    ->where('uploader', '=', $myid) // Replace 'column_name' and 'value' with your actual conditions
+                    ->count();
+
 
         $data= [
             'registeredMusic' => $registeredMusic,
-            'registedMembers' => '25',
-            'MyContributions' => '125',
+            'registedMembers' => $registedMembers,
+            'MyContributions' => $MyContributions,
             'PendingRequests' => '144',
         ];
 
@@ -59,6 +71,20 @@ class MusicController extends Controller
 
     public function my_available_music()
     {
+        $myid=Auth::user()->id;
+
+        $musicdata = DB::table('tbl_uploaded_music_submission')
+                        ->where('uploader', '=', $myid)
+                        ->get();
+
+        $data= [
+            'musicdata' => $musicdata,
+            //'registedMembers' => $registedMembers,
+            //'MyContributions' => $MyContributions,
+            'PendingRequests' => '144',
+        ];
+
+        return view ('musicians.myuploadstable')->with($data);
         return view ('musicians.myuploadstable');
     }
 
@@ -129,7 +155,7 @@ class MusicController extends Controller
             'year' => 'required|string|max:50',
             //'status' => 'required|string|max:8',
             'uploader' => 'required|string|max:150',
-            'pdf_file' => 'required|file|mimes:pdf|max:2048', // Max file size is 2MB (2048 KB)
+            'pdf_file' => 'required|file|mimes:pdf|max:5048', // Max file size is 2MB (2048 KB)
             //'upload_date' => 'required|date',
             //'update_date' => 'required|date',
         ]);

@@ -116,7 +116,7 @@
 		            	
 		            </div>
 		          </form>
-		          <p class="text-center">Already a member? <a  href="{{route('loginAcc')}}">Sign in</a></p>
+		          <p class="text-center">Already a member? <a  href="{{route('login')}}">Sign in</a></p>
 		        </div>
 		      </div>
 				</div>
