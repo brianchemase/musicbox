@@ -20,6 +20,10 @@ use App\Http\Controllers\ContributionsController;
 
 //Route::get('/', function () {    return view('index');});
 
+Route::get('/foo', function () {
+    Artisan::call('storage:link');
+});
+
 Route::get('/',[AuthController::class, 'landingpage'])->name("index");
 
 Route::get('/logIn', [AuthController::class, 'login'])->name('loginAcc');
