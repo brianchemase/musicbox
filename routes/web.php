@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MusicController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContributionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,9 @@ Route::post('/Usersregister', [AuthController::class, 'registerUser'])->name('us
 //Route::post('/register', 'AuthController@register')->name('userregister');
 
 Route::get('/Fogot-pass', [AuthController::class, 'fogotpass'])->name('fogotpass');
+
+
+Route::get('/contributions', [ContributionsController::class, 'showContribution'])->name('contributions');
 
 Auth::routes();
 // Route User
