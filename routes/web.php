@@ -6,6 +6,7 @@ use App\Http\Controllers\MusicController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContributionsController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,6 +76,8 @@ Route::middleware(['auth','user-role:admin'])->group(function()
 
     // view uploaded music
     Route::get('/ViewMusicFile/{id}', [MusicController::class, 'previewMusic'])->name('ViewMusic');
+
+    Route::get('/Listusers', [UserController::class, 'index'])->name('users.index');
 
     });
 });
