@@ -73,7 +73,7 @@ class AuthController extends Controller
         $username=$request->input('email');
         $pass=$request->input('password');
 
-        Mail::to($email)->send(new RegistrationMail($fullnames, $username, $pass));
+        //Mail::to($email)->send(new RegistrationMail($fullnames, $username, $pass));
 
         // You can also log in the user if needed
         // auth()->login($user);

@@ -37,7 +37,7 @@ class RegistrationMail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Registration Mail',
+            subject: 'Account Registration',
         );
     }
 

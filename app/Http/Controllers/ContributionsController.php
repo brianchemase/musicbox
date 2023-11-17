@@ -43,6 +43,34 @@ class ContributionsController extends Controller
 
     public function sendMail()
     {   
+        //musicboxsystem@outlook.com => login email
+        //KeNyAn@2023 => password
+
+           # outlook configs
+        // MAIL_DRIVER=smtp
+        // MAIL_HOST=smtp-mail.outlook.com
+        // MAIL_PORT=587
+        // MAIL_USERNAME=tmsmsimamizi@outlook.com
+        // MAIL_PASSWORD=Mobimba@2023
+        // MAIL_ENCRYPTION=tls
+        // MAIL_FROM_ADDRESS=tmsmsimamizi@outlook.com
+        // MAIL_FROM_NAME="${APP_NAME}"
+
+
+        #zohomail configs
+        // MAIL_MAILER=smtp
+        // MAIL_HOST=smtp.zoho.com
+        // MAIL_PORT=465
+        // MAIL_USERNAME=briananikayi@zohomail.com
+        // MAIL_PASSWORD=Szqc3ZUepbAT
+        // MAIL_ENCRYPTION=ssl
+        // MAIL_FROM_ADDRESS="briananikayi@zohomail.com"
+        // MAIL_FROM_NAME="Music System Admin"
+
+
+
+
+
         $fullnames="Brian Anikayi";
         $email="Brianchemo@gmail.com";
         $username="Brianchemo@gmail.com";
