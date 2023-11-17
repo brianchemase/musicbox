@@ -78,6 +78,8 @@ Route::middleware(['auth','user-role:admin'])->group(function()
     Route::get('/ViewMusicFile/{id}', [MusicController::class, 'previewMusic'])->name('ViewMusic');
 
     Route::get('/Listusers', [UserController::class, 'index'])->name('users.index');
+    Route::post('/update-user', [UserController::class, 'updateUser'])->name('update_user');
+    Route::any('/users/{user}/change-password', [UserController::class, 'changePassword'])->name('change_password');
 
     });
 });

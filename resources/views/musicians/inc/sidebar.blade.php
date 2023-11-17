@@ -99,11 +99,7 @@
                         </a>
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="#">
-                            <i class="align-middle" data-feather="power"></i> <span class="align-middle">Signout</span>
-                        </a>
-					</li>
+					
 
 					<li class="sidebar-item">
 						<a class="sidebar-link" href="{{ route('logout') }}"

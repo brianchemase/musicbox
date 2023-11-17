@@ -8,6 +8,30 @@
 				<div class="container-fluid p-0">
 
 				<h1 class="h3 mb-3"><strong>Music Box</strong> Users Table</h1>
+				@if ($message = Session::get('success'))
+                <div class="alert alert-success alert-dismissible" role="alert">
+					<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+					<div class="alert-message">
+						<strong>{{ $message }}</strong> 
+					</div>
+				</div>
+				@endif
+
+				@if (count($errors) > 0)
+				<div class="alert alert-danger alert-dismissible" role="alert">
+					<button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+					<div class="alert-message">
+						<strong>
+						<ul>
+							@foreach ($errors->all() as $error)
+							<li>{{ $error }}</li>
+							@endforeach
+						</ul>
+						</strong> 
+					</div>
+				</div>	
+				
+				@endif
 
 					<!-- <div class="row">
 						<div class="col-12">
@@ -37,6 +61,7 @@
 												<th>Position</th>
 												<th>Role</th>
 												<th>Registered At</th>
+												<th>Action</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -49,6 +74,13 @@
 													<td>{{ $user->position }}</td>
 													<td>{{ $user->role }}</td>
 													<td>{{ $user->created_at->format('Y-m-d H:i:s') }}</td>
+													<td> 
+													<a href="#viewAgentModal{{$user->id}}" title="View Client" data-toggle="modal" class="btn btn-success"><i class="fa fa-eye"></i> </a> 
+													<a href="#editUserModal{{$user->id}}" title="Edit User" data-toggle="modal" class="btn btn-primary"><i class="fa fa-edit"></i> Edit</a>
+													<a href="#changePasswordModal{{$user->id}}" title="Change Password" data-toggle="modal" class="btn btn-primary"><i class="fa fa-key"></i></a>
+
+														@include('musicians.modals.modal')
+													</td>
 												</tr>
 											@endforeach
 										</tbody>
