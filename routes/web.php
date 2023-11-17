@@ -35,6 +35,7 @@ Route::get('/Fogot-pass', [AuthController::class, 'fogotpass'])->name('fogotpass
 
 
 Route::get('/contributions', [ContributionsController::class, 'showContribution'])->name('contributions');
+Route::get('/MailTest', [ContributionsController::class, 'sendMail'])->name('sendmail');
 
 Auth::routes();
 // Route User

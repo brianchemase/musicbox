@@ -7,6 +7,8 @@ use App\Models\Country;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\RegistrationMail;
 
 class AuthController extends Controller
 {
@@ -65,6 +67,13 @@ class AuthController extends Controller
 
         // Save the user to the database
         $user->save();
+
+        $fullnames=$request->input('name');
+        $email=$request->input('email');
+        $username=$request->input('email');
+        $pass=$request->input('password');
+
+        Mail::to($email)->send(new RegistrationMail($fullnames, $username, $pass));
 
         // You can also log in the user if needed
         // auth()->login($user);

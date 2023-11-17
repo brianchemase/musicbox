@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\RegistrationMail;
 
 use Illuminate\Http\Request;
 
@@ -37,5 +39,19 @@ class ContributionsController extends Controller
         ];
 
         return view('contribution')->with($data);;
+    }
+
+    public function sendMail()
+    {   
+        $fullnames="Brian Anikayi";
+        $email="Brianchemo@gmail.com";
+        $username="Brianchemo@gmail.com";
+        $pass='P@$$W0rd';
+
+
+
+        Mail::to($email)->send(new RegistrationMail($fullnames, $username, $pass));
+
+        return "Email sent";
     }
 }
