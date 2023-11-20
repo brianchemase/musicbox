@@ -80,6 +80,7 @@ Route::middleware(['auth','user-role:admin'])->group(function()
     Route::get('/Listusers', [UserController::class, 'index'])->name('users.index');
     Route::post('/update-user', [UserController::class, 'updateUser'])->name('update_user');
     Route::any('/users/{user}/change-password', [UserController::class, 'changePassword'])->name('change_password');
+    Route::post('/Userregister', [UserController::class, 'registerUser'])->name('registerUser');
 
     });
 });
