@@ -81,7 +81,7 @@
 			      			<label class="form-control-placeholder"  for="username">Country</label>
 			      		</div>
 
-						  <div class="form-group mt-3">
+						<!-- <div class="form-group mt-3">
 						  <select class="form-control" name="country1" value="{{ old('country1') }}">
 						  		<option value="" ></option>
 								@foreach ($countries as $country)
@@ -89,7 +89,7 @@
 								@endforeach
 							</select>
 							<label class="form-control-placeholder" for="username">Country</label>
-						</div>
+						</div> -->
 
 
 			      		<div class="form-group mt-3">
