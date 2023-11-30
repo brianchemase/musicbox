@@ -7,7 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="Responsive Admin &amp; Dashboard Template based on Bootstrap 5">
 	<meta name="author" content="Brian Anikayi">
-	<meta name="keywords" content="Sisdo Intranet System">
+	<meta name="google-adsense-account" content="ca-pub-2582016512728310">
+	<meta name="keywords" content="Music Box System">
 
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link rel="shortcut icon" href="{{asset('dash/img/icons/icon-48x48.png')}}" />
@@ -18,6 +19,8 @@
 
 	<!-- <link href="css/app.css" rel="stylesheet"> -->
     <link href="{{asset('dash/css/app.css')}}" rel="stylesheet">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2582016512728310"
+     crossorigin="anonymous"></script>
 	<!-- BEGIN SETTINGS -->
 
 	<!-- BEGIN SETTINGS -->

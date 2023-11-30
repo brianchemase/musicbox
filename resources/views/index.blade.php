@@ -15,6 +15,7 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
+  <meta name="google-adsense-account" content="ca-pub-2582016512728310">
 
   <title>Music Box</title>
 
