@@ -30,14 +30,36 @@
 					<li class="mb-1"><span class="fa fa-user-tag fa-fw mr-1"></span> Uploaded by : {{ $musicSubmission->uploader }} on : {{ \Carbon\Carbon::parse($musicSubmission->upload_date)->format('d-m-Y') }}</li> 
 				</ul>
 			</div>
+			
+			<hr class="my-0">
+				<div class="card-body">
+					<h5 class="h6 card-title"><strong> Audio File</strong></h5>
+					@if ($musicSubmission->audiopath)
+					<audio controls>
+						<source src="{{ url('storage/audio/'.$musicSubmission->audiopath)}}" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+					@else
+
+					<p>The audio file was not uploaded</p>
+
+					@endif
+
+
+
+				</div>
+				
+
 			<hr class="my-0">
 			<div class="card-body">
 			<h5 class="h6 card-title"><strong> Videos Attempt</strong></h5>
 
-			<iframe width="450" height="300"
-			src="https://www.youtube.com/embed/vkP3krBJlvg">
+			<!-- <iframe width="450" height="300"
+				src="https://www.youtube.com/embed/vkP3krBJlvg">
 		
-			</iframe>
+			</iframe> -->
+
+				<p>The Video attempt was not uploaded. Comming soon</p>
 						
 			</div>
 		</div>

@@ -95,6 +95,10 @@
 										<input type="text" class="form-control" id="validationDefault05" name="year" placeholder="Enter year">
 									</div>
 									<div class="col-4">
+										<label for="validationDefault06" class="form-label">Upload Music Audio</label>
+										<input type="file" class="form-control" id="validationDefault06" name="audio_file">
+									</div>
+									<div class="col-4">
 										<label for="validationDefault06" class="form-label">Attach Music File in PDF *</label>
 										<input type="file" class="form-control" id="validationDefault06" name="pdf_file" required>
 									</div>

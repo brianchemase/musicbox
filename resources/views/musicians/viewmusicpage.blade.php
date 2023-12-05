@@ -35,13 +35,22 @@
 				</ul>
 			</div>
 			<hr class="my-0">
+				<div class="card-body">
+					<h5 class="h6 card-title"><strong> Audio File</strong></h5>
+					<audio controls>
+						<source src="{{ asset('audio/ni_nani_wa_bwana_midi.mpeg') }}" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+
+				</div>
+			<hr class="my-0">
 			<div class="card-body">
 			<h5 class="h6 card-title"><strong> Videos Attempt</strong></h5>
 
-			<iframe width="450" height="300"
-			src="https://www.youtube.com/embed/vkP3krBJlvg">
-		
-			</iframe>
+				<iframe width="450" height="300"
+					src="https://www.youtube.com/embed/vkP3krBJlvg">
+				</iframe>
+
 						
 			</div>
 		</div>

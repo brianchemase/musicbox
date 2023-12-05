@@ -160,6 +160,7 @@ class MusicController extends Controller
             'year' => 'required|string|max:50',
             //'status' => 'required|string|max:8',
             'uploader' => 'required|string|max:150',
+            'audio_file' => 'nullable|mimes:mp3,ogg,wav',
             'pdf_file' => 'required|file|mimes:pdf|max:5048', // Max file size is 2MB (2048 KB)
             //'upload_date' => 'required|date',
             //'update_date' => 'required|date',
@@ -187,6 +188,21 @@ class MusicController extends Controller
         //     $filePath = null;
         // }
 
+        if ($request->hasFile('audio_file')) {
+            $audioFile = $request->file('audio_file');
+            
+            // Generate a unique hashed name for the file
+            $uniqueFileName = $audioFile->hashName();
+            
+            // Store the file with the unique name
+            $path = $audioFile->storeAs('audio', $uniqueFileName, 'public');
+        } else {
+            $path = null;
+        }
+    
+        // Extract the filename from the path
+        $audiofilename = $path ? pathinfo($path, PATHINFO_BASENAME) : null;
+
         if ($request->hasFile('pdf_file')) {
 
             //return $request;
@@ -212,6 +228,7 @@ class MusicController extends Controller
             'year' => $year,
             'status' => $status,
             'uploader' => $uploader,
+            'audiopath' => $audiofilename,
             'path' => $request->pdf_file->hashName(), // Save the unique file name in the 'path' column
             'upload_date' => $upload_date,
             'update_date' => $update_date,
