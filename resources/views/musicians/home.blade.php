@@ -104,20 +104,78 @@
 
 				<div class="row">
 					<div class="container py-3">
-					<div class="title h1 text-center">Horizontal cards - Bootstrap 4</div>
+					<div class="title h1 text-center">Share Music to the world</div>
 					<!-- Card Start -->
 					<div class="card">
 						<div class="row ">
 
 							<div class="col-md-7 px-3">
 								<div class="card-block px-6">
-								<h4 class="card-title">Horizontal Card with Carousel - Bootstrap 4 </h4>
+								<h4 class="card-title">Share Music to the world </h4>
 								<p class="card-text">
-									The Carousel code can be replaced with an img src, no problem. The added CSS brings shadow to the card and some adjustments to the prev/next buttons and the indicators is rounded now. As in Bootstrap 3
+								The origin of music is a fascinating journey that spans across cultures, time periods, and geographic locations. Music is a universal language that has evolved over centuries, reflecting the rich tapestry of human history
 								</p>
 								<p class="card-text">Made for usage, commonly searched for. Fork, like and use it. Just move the carousel div above the col containing the text for left alignment of images</p>
 								<br>
-								<a href="#" class="mt-auto btn btn-primary  ">Read More</a>
+								<p><strong>1. Prehistoric and Ancient Beginnings:</strong></p>
+									<ul>
+										<li><strong>Vocal Expressions:</strong> Before the invention of instruments, early humans likely communicated
+											through vocalizations, imitating the sounds of nature and expressing emotions.</li>
+										<li><strong>Primitive Instruments:</strong> The discovery of simple percussion instruments, such as drums made from
+											animal hides and bone flutes, marked the beginning of instrumental music.</li>
+									</ul>
+								<!-- <p><strong>2. Early Civilizations:</strong></p>
+									<ul>
+										<li><strong>Mesopotamia and Egypt:</strong> The earliest known written music dates back to ancient civilizations
+											like Mesopotamia and Egypt. Music played a significant role in religious ceremonies and daily life.</li>
+										<li><strong>Greece and Rome:</strong> Ancient Greeks made substantial contributions to music theory. The lyre and
+											aulos (wind instrument) were popular in Greek music, while Romans adopted and adapted Greek musical
+											traditions.</li>
+									</ul>
+								<p><strong>3. Medieval and Renaissance Periods:</strong></p>
+										<ul>
+											<li><strong>Chant and Polyphony:</strong> During the medieval period, Gregorian chant dominated religious music.
+												The Renaissance saw the emergence of polyphony, where multiple independent melodies were sung
+												simultaneously.</li>
+											<li><strong>Musical Notation:</strong> The development of musical notation in the 9th century allowed for more
+												precise documentation of musical compositions.</li>
+										</ul>
+
+								<p><strong>4. Baroque and Classical Eras:</strong></p>
+										<ul>
+											<li><strong>Baroque Innovation:</strong> The Baroque era witnessed the development of tonality and the use of
+												ornamentation. Composers like Bach and Handel made significant contributions.</li>
+											<li><strong>Classical Symphonies:</strong> The Classical period brought forth the symphony and sonata forms.
+												Composers like Mozart, Haydn, and Beethoven created enduring masterpieces.</li>
+										</ul>
+
+								<p><strong>5. Romantic Period:</strong></p>
+										<ul>
+											<li><strong>Expressive Individualism:</strong> The Romantic era emphasized emotional expression and individualism
+												in music. Composers like Chopin, Schumann, and Tchaikovsky created deeply expressive works.</li>
+											<li><strong>Nationalism:</strong> Music began to reflect national identities, with composers drawing
+												inspiration from their cultural roots.</li>
+										</ul>
+
+								<p><strong>6. 20th Century and Beyond:</strong></p>
+										<ul>
+											<li><strong>Innovation and Experimentation:</strong> The 20th century saw a surge in experimentation with new
+												scales, rhythms, and tonalities. Genres like jazz, blues, rock, and electronic music emerged.</li>
+											<li><strong>Global Influences:</strong> Increasing globalization facilitated the blending of musical traditions
+												from around the world, resulting in diverse genres and cross-cultural collaborations.</li>
+										</ul>
+
+								<p><strong>7. Digital Age:</strong></p>
+										<ul>
+											<li><strong>Technology and Accessibility:</strong> The advent of recording technology and the internet
+												revolutionized the music industry, making music more accessible to a global audience.</li>
+											<li><strong>Diversity and Fusion:</strong> Contemporary music embraces a wide range of genres and styles, often
+												blending cultural influences and pushing the boundaries of traditional conventions.</li>
+										</ul>
+
+								<p>The evolution of music is a dynamic and ongoing process, continually shaped by cultural, technological, and societal
+											changes. It remains a powerful medium for human expression, connecting people across borders and generations.</p>
+								 -->
 								</div>
 							</div>
 										<!-- Carousel start -->
