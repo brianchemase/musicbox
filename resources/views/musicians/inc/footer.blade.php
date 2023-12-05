@@ -25,3 +25,14 @@
 					</div>
 				</div>
 			</footer>
+
+										<script>
+                                            window.addEventListener('DOMContentLoaded', function() {
+                                                //swal("Attention", "You are accessing a test enviroment. Some of the functionality are still in progress", "error");
+												swal({
+													title: "Attention!",
+													text: "You are accessing a test enviroment. Some of the functionality are still in progress",
+													imageUrl: "https://media.istockphoto.com/id/1175435360/vector/music-note-icon-vector-illustration.jpg?s=612x612&w=0&k=20&c=R7s6RR849L57bv_c7jMIFRW4H87-FjLB8sqZ08mN0OU="
+													});
+                                            });
+                                        </script>

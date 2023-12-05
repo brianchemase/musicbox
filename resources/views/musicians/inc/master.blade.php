@@ -18,6 +18,7 @@
 	<title>Music Box System</title>
 
 	<!-- <link href="css/app.css" rel="stylesheet"> -->
+	<link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
     <link href="{{asset('dash/css/app.css')}}" rel="stylesheet">
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2582016512728310"
      crossorigin="anonymous"></script>
@@ -57,6 +58,7 @@
 	
     <script src="{{asset('dash/js/app.js')}}"></script>
 	<script src="{{asset('dash/js/datatables.js')}}"></script>
+	<script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
 
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {
