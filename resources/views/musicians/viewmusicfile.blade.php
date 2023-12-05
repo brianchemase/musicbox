@@ -27,7 +27,7 @@
 					<li class="mb-1"><span class="fa fa-sign fa-fw mr-1"></span> Type: {{ $musicSubmission->type }}</li>
 					<li class="mb-1"><span class="fa fa-play fa-fw mr-1"></span> Year: {{ $musicSubmission->year }}</li>
 
-					<li class="mb-1"><span class="fa fa-user-tag fa-fw mr-1"></span> Uploaded by : {{ $musicSubmission->uploader }} on : {{ \Carbon\Carbon::parse($musicSubmission->upload_date)->format('d-m-Y') }}</li> 
+					<li class="mb-1"><span class="fa fa-user-tag fa-fw mr-1"></span> Uploaded by : {{ $uploaderName }} on : {{ \Carbon\Carbon::parse($musicSubmission->upload_date)->format('d-m-Y') }}</li> 
 				</ul>
 			</div>
 			

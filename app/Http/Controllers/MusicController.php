@@ -257,9 +257,25 @@ class MusicController extends Controller
             return redirect()->route('music.index')->with('error', 'Music submission not found.');
         }
 
+        if ($musicSubmission) {
+            // Assuming 'user_id' is the foreign key column in 'tbl_uploaded_music_submission'
+            $userId = $musicSubmission->uploader;
+        
+            // Retrieve the user's name from the 'users' table
+            $user = DB::table('users')->find($userId);
+        
+            // Access the user's name
+            $uploaderName = $user->name;
+
+            //return $uploaderName;
+        
+            // Now, $uploaderName contains the name of the uploader
+        }
+
         $data=[
 
             'musicSubmission' => $musicSubmission,// submissions
+            'uploaderName' => $uploaderName,// submissions
 
         ];
             
