@@ -19,6 +19,7 @@
 
 	<!-- <link href="css/app.css" rel="stylesheet"> -->
 	<link rel='stylesheet' href='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css'>
+	<script src="https://unpkg.com/tilt.js@1.2.1/dest/tilt.jquery.min.js"></script>
     <link href="{{asset('dash/css/app.css')}}" rel="stylesheet">
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2582016512728310"
      crossorigin="anonymous"></script>
@@ -59,6 +60,13 @@
     <script src="{{asset('dash/js/app.js')}}"></script>
 	<script src="{{asset('dash/js/datatables.js')}}"></script>
 	<script src='https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js'></script>
+	<script type="text/javascript" src="auth/js/vanilla-tilt.js"></script>
+
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.5
+		})
+	</script>
 
 	<script>
 		document.addEventListener("DOMContentLoaded", function() {

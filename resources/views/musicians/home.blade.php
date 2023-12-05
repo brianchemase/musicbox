@@ -166,7 +166,7 @@
 							<div class="row">
 								<div class="col-lg-4 mb-4">
 									<div class="card">
-										<img src="{{asset('dash/img/holders/chris-bair-A10y2Eq7OHY-unsplash.jpg')}}" width="700" height="120" alt="" class="card-img-top">
+										<img data-tilt src="{{asset('dash/img/holders/chris-bair-A10y2Eq7OHY-unsplash.jpg')}}" width="700" height="120" alt="" class="card-img-top">
 										<div class="card-body">
 											<h5 class="card-title">Trumpet</h5>
 											<p class="card-text">The trumpet, a shining example of a brass wind instrument, commands attention with its resplendent appearance and unmistakable sound. Crafted from gleaming brass, this musical marvel features a distinctive shape, including a flared bell and a series of coiled tubing, culminating in a small, mouthpiece-ready end. With its rich history dating back centuries and its prominent role in various musical genres, the trumpet's clarion call has the power to evoke a wide range of emotions, from triumphant fanfares to soul-stirring melodies. Whether heralding grand entrances, leading orchestras, or taking center stage in jazz ensembles, the trumpet's versatile and commanding presence makes it an integral part of the world of music.</p>
@@ -177,7 +177,7 @@
 								</div>
 								<div class="col-lg-4 mb-4">
 									<div class="card">
-										<img src="{{asset('dash/img/holders/nathan-bingle-MIRbeLb6HTw-unsplash.jpg')}}" alt="" class="card-img-top">
+										<img data-tilt src="{{asset('dash/img/holders/nathan-bingle-MIRbeLb6HTw-unsplash.jpg')}}" alt="" class="card-img-top">
 											<div class="card-body">
 												<h5 class="card-title">The TUBA</h5>
 												<p class="card-text">The tuba, a majestic member of the brass family, exudes both power and grace. With its imposing size and curved shape, this brass wind instrument is instantly recognizable. The tuba's deep, resonant tones form the foundation of many musical compositions, providing the essential bass notes that underpin orchestral symphonies, marching band performances, and even modern jazz ensembles. Its iconic bell, flaring outwards, belies the instrument's ability to produce sonorous and melodic sounds that can range from commanding and authoritative to hauntingly beautiful. Often considered the backbone of low-frequency harmony, the tuba's commanding presence ensures it stands as a stalwart guardian of the musical landscape.</p>
@@ -188,7 +188,7 @@
 								</div>
 								<div class="col-lg-4 mb-4">
 									<div class="card">
-										<img src="{{asset('dash/img/holders/joshua-woroniecki-hyxNfA4Dgt8-unsplash.jpg')}}" alt="" class="card-img-top">
+										<img data-tilt src="{{asset('dash/img/holders/joshua-woroniecki-hyxNfA4Dgt8-unsplash.jpg')}}" alt="" class="card-img-top">
 										<div class="card-body">
 											<h5 class="card-title">A Choir</h5>
 											<p class="card-text">A choir, a harmonious assembly of voices, epitomizes the collective beauty of human sound. Comprising a diverse group of individuals, each with their unique vocal timbre, choirs create a tapestry of melodies and harmonies that can evoke profound emotions and stir the soul. Whether performing sacred hymns in a reverent cathedral, lending their voices to classical masterpieces in a grand concert hall, or infusing contemporary music with their enchanting harmonies, choirs have the remarkable ability to transport listeners to a realm of pure auditory bliss. The unity of purpose and shared passion for vocal artistry bond choir members as they come together to produce music that transcends boundaries, resonates with the human spirit, and leaves an indelible mark on the hearts of all who have the privilege of listening.</p>
