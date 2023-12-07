@@ -33,6 +33,7 @@ Route::post('/Usersregister', [AuthController::class, 'registerUser'])->name('us
 //Route::post('/register', 'AuthController@register')->name('userregister');
 
 Route::get('/Fogot-pass', [AuthController::class, 'fogotpass'])->name('fogotpass');
+Route::post('/reset-Fogot-pass', [AuthController::class, 'resetfogotpass'])->name('changepassword');
 
 
 Route::get('/contributions', [ContributionsController::class, 'showContribution'])->name('contributions');

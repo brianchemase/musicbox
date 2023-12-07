@@ -167,7 +167,7 @@
   </div>
 
   <!-- service section -->
-  <section class="service_section layout_padding">
+  <!-- <section class="service_section layout_padding">
     <div class="container">
       <div class="heading_container">
         <h2>
@@ -269,7 +269,7 @@
         </a>
       </div>
     </div>
-  </section>
+  </section> -->
   <!-- end service section -->
 
 

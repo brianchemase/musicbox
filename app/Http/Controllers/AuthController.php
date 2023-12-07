@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\RegistrationMail;
+use App\Mail\NewPasswordMail;
 
 class AuthController extends Controller
 {
@@ -80,6 +81,37 @@ class AuthController extends Controller
 
         // Redirect to a success page or do something else
         return redirect()->route('login')->with('success', 'Registration successful!. Login');
+    }
+
+    public function resetfogotpass( Request $request)
+    {
+
+        $request->validate([
+            'email' => 'required|email|max:255',
+            ]);
+
+        $email = $request->email;
+
+        $user = User::where('email', $email)->first();
+
+        if (!$user) {
+            return back()->with('status', 'We can\'t find a user with that email address.');
+        }
+        $fullnames=$user->name;
+
+        // Generate a new password
+        $newPassword=rand();
+
+        // Update the user's password in the database
+        $user->update([
+            'password' => bcrypt($newPassword),
+        ]);
+ 
+        $username=$email;
+        $pass=$newPassword;
+
+        Mail::to($email)->send(new NewPasswordMail($fullnames, $username, $pass));
+        return redirect()->route('login')->with('success', 'Check your email for the new password.');
     }
 
 

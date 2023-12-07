@@ -36,15 +36,33 @@
 									</p>
 								</div>
 			      	</div>
-							<form action="#" class="signin-form">
+					<form method="POST" action="{{ route('changepassword') }}" class="signin-form" >
+					@if(Session::has('success'))
+							<div class="alert alert-success">{{Session::get('success')}}</div>
+						@endif
+
+						@if($errors->any())
+							<div class="alert alert-danger">
+								<ul>
+									@foreach($errors->all() as $error)
+										<li>{{ $error }}</li>
+									@endforeach
+								</ul>
+							</div>
+						@endif
+
+						@if(session('status'))
+							<div class="alert alert-danger">{{ session('status') }}</div>
+						@endif
+								@csrf
 			      		<div class="form-group mt-3">
-			      			<input type="text" class="form-control" required>
+			      			<input type="email" class="form-control" name="email" required>
 			      			<label class="form-control-placeholder" for="username">Email</label>
 			      		</div>
 		            
-		            <div class="form-group">
-		            	<button type="submit" class="form-control btn btn-primary rounded submit px-3">Recover Pass</button>
-		            </div>
+						<div class="form-group">
+							<button type="submit" class="form-control btn btn-primary rounded submit px-3">Recover Pass</button>
+						</div>
 		          
 		          </form>
 		          <p class="text-center">Got your password? <a href="{{route('loginAcc')}}">Sign in</a></p>
