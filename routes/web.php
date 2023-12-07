@@ -35,6 +35,8 @@ Route::post('/Usersregister', [AuthController::class, 'registerUser'])->name('us
 Route::get('/Fogot-pass', [AuthController::class, 'fogotpass'])->name('fogotpass');
 Route::post('/reset-Fogot-pass', [AuthController::class, 'resetfogotpass'])->name('changepassword');
 
+Route::any('/updateSelfpass', [UserController::class, 'changeUsersPassword'])->name('changeUsersPassword');
+
 
 Route::get('/contributions', [ContributionsController::class, 'showContribution'])->name('contributions');
 Route::get('/MailTest', [ContributionsController::class, 'sendMail'])->name('sendmail');

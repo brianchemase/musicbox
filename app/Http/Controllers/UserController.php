@@ -38,7 +38,7 @@ class UserController extends Controller
         return redirect()->back()->with('success', 'User updated successfully.');
     }
 
-    public function changePassword(Request $request, User $user)
+        public function changePassword(Request $request, User $user)
         {
             $request->validate([
                 'new_password' => 'required|min:8|confirmed',
@@ -93,4 +93,27 @@ class UserController extends Controller
                 // Redirect to a success page or do something else
                 return redirect()->back()->with('success', 'Registration successful!.');
             }
+
+            public function changeUsersPassword(Request $request)
+        {
+            $request->validate([
+                'usersid' => 'required|string|max:255',
+                'new_password' => 'required|min:8|confirmed',
+            ]);
+
+                            // Find the user by ID
+                    $user = User::find($request->usersid);
+                    
+
+                    if (!$user) {
+                        return back()->with('passerror', 'User not found');
+                    }
+
+                    // Update the user's password
+                    $user->update([
+                        'password' => Hash::make($request->new_password),
+                    ]);
+
+            return back()->with('passsuccess', 'Password updated successfully');
+        }
 }
