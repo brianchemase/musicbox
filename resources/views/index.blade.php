@@ -328,6 +328,25 @@
     </div>
   </section>
 
+  <section class="service_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Sample Video Uploads Available
+        </h2>
+        <p>
+          Here is a sample of the shared music attempts we have received.
+        </p>
+      </div>
+    </div>
+    <div class="container">
+
+      <iframe width="1200" height="500" src="https://www.youtube.com/embed/887gmteM09E?si=wTEntfC4azunuyS7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    
+    </div>
+  </section>
+
+
 
   <!-- about section -->
 
