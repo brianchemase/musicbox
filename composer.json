@@ -13,6 +13,7 @@
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.2",
         "outhebox/blade-flags": "^1.2",
+        "spatie/laravel-backup": "^8.2",
         "stidges/laravel-country-flags": "^2.0"
     },
     "require-dev": {
